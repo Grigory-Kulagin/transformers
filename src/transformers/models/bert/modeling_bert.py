@@ -333,6 +333,7 @@ class BertSelfAttention(nn.Module):
 
         # Mask heads if we want to
         if head_mask is not None:
+            print(attention_probs.shape)
             attention_probs = attention_probs * head_mask
 
         context_layer = torch.matmul(attention_probs, value_layer)
